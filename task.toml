@@ -1,0 +1,30 @@
+artifacts = ["/app/output/replay.json"]
+
+[task]
+name = "afterquery/replica-state-replay"
+
+[metadata]
+author_name = "Thomas Morison"
+author_email = "matiasv931026@gmail.com"
+difficulty_explanation = "This synthetic ML-serving incident grades 16 replay targets from 48 request records. The solver has to reconcile reused request-side identifiers, piecewise replica clocks, historical model and preprocessing revisions, and five legacy archive packing families from 12 retained known-good outputs. The serving path also has two request-driven state machines, a queue-pressure accumulator driven by a separate dispatcher event stream, and a delta-coded feature cache whose maintenance records use a third independent clock. Dispatcher time has its own piecewise clock, worker keys are reassigned between pressure pools during the incident, 72 pressure events must be merged with the inference chronology, and the 48 feature packets can only be reconstructed after time-qualified cache-key reassignment and 18 asynchronous cache-maintenance events are ordered against the requests. The residual state is replica-local, calibration state is shared across time-qualified lanes, pressure state is shared across worker pools, and feature-cache state is shared across independently reassigned banks, so treating requests independently or replaying each replica in isolation loses state and can corrupt the feature vectors that feed every later stage. Several superficially plausible interpretations survive early observations and only disappear after later revision boundaries. This is representative of production inference forensics by an ML platform engineer reconstructing decisions from partial telemetry after a logging gap. A focused expert would reasonably spend several hours building the chronology, recovering archive semantics, and validating state transitions against the retained outputs."
+solution_explanation = "The reference solution reconstructs request identity and coordinator time, resolves historical model, normalization, policy, residual, calibration, lane, worker-pool, and feature-cache state, and converts both dispatcher and cache-maintenance events onto coordinator time. It derives the model, normalizer, policy, residual, and calibration archive conventions from retained known-good outputs rather than embedding recovered assignments. It first rebuilds each request feature vector by replaying cache innovations and asynchronous cache maintenance in coordinator order. It then replays all requests and dispatcher events chronologically, maintaining replica residual state, shared lane calibration state, and pressure-pool state, and emits the 16 requested decisions. The expected artifact is produced from this replay rather than copied from sealed verifier data."
+verification_explanation = "The sealed verifier only parses /app/output/replay.json and compares its semantics with independently stored expected records; it never imports or executes agent-produced code. It enforces the documented result set, fields, request ordering, historical revision identities, decisions, and a probability tolerance of 0.0000005 while accepting harmless JSON key order and numeric serialization differences. Missing, malformed, incomplete, or numerically incorrect artifacts score 0. The dispatcher-pressure and feature-cache evidence is solver-visible and is not used to derive ground truth inside the verifier."
+category = "ML"
+subcategory = "Inference"
+tags = ["ml-serving", "inference-replay", "state-reconstruction", "forensics"]
+expert_time_estimate_hours = 2.5
+relevant_experience = "Experience with Python-based ML inference pipelines, timestamped serving logs, model rollout state, feature preprocessing, and deterministic validation of production replay workflows."
+
+[verifier]
+environment_mode = "separate"
+timeout_sec = 120
+
+[agent]
+timeout_sec = 9000
+
+[environment]
+build_timeout_sec = 600
+cpus = 2
+memory_mb = 2048
+storage_mb = 4096
+gpus = 0

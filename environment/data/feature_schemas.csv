@@ -1,0 +1,4 @@
+schema_rev,f0,f1,f2,f3
+s1,tA,tB,tC,tD
+s2,tB,tD,tA,tC
+s3,tC,tA,tD,tB

@@ -1,0 +1,148 @@
+{
+  "results": [
+    {
+      "decision": 1,
+      "model_rev": "m4",
+      "norm_rev": "n2",
+      "policy_rev": "p2",
+      "probability": 0.88447835,
+      "replica": "r24",
+      "request_id": "q002"
+    },
+    {
+      "decision": 1,
+      "model_rev": "m4",
+      "norm_rev": "n2",
+      "policy_rev": "p2",
+      "probability": 0.59632751,
+      "replica": "r24",
+      "request_id": "q005"
+    },
+    {
+      "decision": 0,
+      "model_rev": "m4",
+      "norm_rev": "n2",
+      "policy_rev": "p2",
+      "probability": 0.30044142,
+      "replica": "r17",
+      "request_id": "q008"
+    },
+    {
+      "decision": 1,
+      "model_rev": "m6",
+      "norm_rev": "n2",
+      "policy_rev": "p2",
+      "probability": 0.88785857,
+      "replica": "r24",
+      "request_id": "q011"
+    },
+    {
+      "decision": 1,
+      "model_rev": "m6",
+      "norm_rev": "n3",
+      "policy_rev": "p2",
+      "probability": 0.9614927,
+      "replica": "r24",
+      "request_id": "q014"
+    },
+    {
+      "decision": 0,
+      "model_rev": "m6",
+      "norm_rev": "n3",
+      "policy_rev": "p3",
+      "probability": 0.15366764,
+      "replica": "r24",
+      "request_id": "q017"
+    },
+    {
+      "decision": 1,
+      "model_rev": "m7",
+      "norm_rev": "n4",
+      "policy_rev": "p3",
+      "probability": 0.67050354,
+      "replica": "r31",
+      "request_id": "q020"
+    },
+    {
+      "decision": 1,
+      "model_rev": "m7",
+      "norm_rev": "n4",
+      "policy_rev": "p3",
+      "probability": 0.7887723,
+      "replica": "r17",
+      "request_id": "q023"
+    },
+    {
+      "decision": 1,
+      "model_rev": "m7",
+      "norm_rev": "n4",
+      "policy_rev": "p5",
+      "probability": 0.83452956,
+      "replica": "r17",
+      "request_id": "q026"
+    },
+    {
+      "decision": 0,
+      "model_rev": "m9",
+      "norm_rev": "n3",
+      "policy_rev": "p5",
+      "probability": 0.51527898,
+      "replica": "r24",
+      "request_id": "q029"
+    },
+    {
+      "decision": 1,
+      "model_rev": "m7",
+      "norm_rev": "n4",
+      "policy_rev": "p5",
+      "probability": 0.85782076,
+      "replica": "r31",
+      "request_id": "q032"
+    },
+    {
+      "decision": 1,
+      "model_rev": "m9",
+      "norm_rev": "n4",
+      "policy_rev": "p5",
+      "probability": 0.65148416,
+      "replica": "r17",
+      "request_id": "q035"
+    },
+    {
+      "decision": 1,
+      "model_rev": "m9",
+      "norm_rev": "n6",
+      "policy_rev": "p5",
+      "probability": 0.94935847,
+      "replica": "r24",
+      "request_id": "q038"
+    },
+    {
+      "decision": 1,
+      "model_rev": "m9",
+      "norm_rev": "n5",
+      "policy_rev": "p5",
+      "probability": 0.609639,
+      "replica": "r31",
+      "request_id": "q041"
+    },
+    {
+      "decision": 0,
+      "model_rev": "m9",
+      "norm_rev": "n6",
+      "policy_rev": "p5",
+      "probability": 0.37897752,
+      "replica": "r17",
+      "request_id": "q044"
+    },
+    {
+      "decision": 1,
+      "model_rev": "m9",
+      "norm_rev": "n6",
+      "policy_rev": "p6",
+      "probability": 0.84452565,
+      "replica": "r24",
+      "request_id": "q047"
+    }
+  ]
+}

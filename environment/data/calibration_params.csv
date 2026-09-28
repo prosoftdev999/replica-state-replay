@@ -1,0 +1,4 @@
+calibration_rev,format_rev,basis_token,q0,q1,q2
+g1,Q1,tA,0.82,0.27,0.031
+g2,Q2,tC,-0.026,0.69,0.34
+g3,Q3,tB,0.21,0.024,0.88
